@@ -1,7 +1,10 @@
-var add = function (n1, n2, showResult, phrase) {
-    var result = n1 + n2;
-    return showResult ? console.log("".concat(phrase).concat(result)) : result;
+var person = {
+    name: 'Russell',
+    age: 21,
+    hobbies: ['Swimming', 'Learning'],
+    role: [2, 'frontend']
 };
-var num1 = 5;
-var num2 = 2.8;
-add(num1, num2, true, 'Result is: ');
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
+    console.log(hobby.toUpperCase());
+}
