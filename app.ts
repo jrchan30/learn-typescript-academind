@@ -1,14 +1,25 @@
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
+// const person: {
+//   name: string;
+//   age: number;
+//   hobbies: string[];
+//   role: [number, string];
+// } = {
+//   name: 'Russell',
+//   age: 21,
+//   hobbies: ['Swimming', 'Learning'],
+//   role: [2, 'frontend'],
+// };
+
+enum Role {
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
+}
+const person = {
   name: 'Russell',
   age: 21,
   hobbies: ['Swimming', 'Learning'],
-  role: [2, 'frontend'],
+  role: Role.ADMIN,
 };
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
-}
+
+person.role === Role.ADMIN ? console.log(person.role) : '';
