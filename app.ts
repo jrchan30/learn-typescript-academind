@@ -1,25 +1,15 @@
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: 'Russell',
-//   age: 21,
-//   hobbies: ['Swimming', 'Learning'],
-//   role: [2, 'frontend'],
-// };
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
-}
-const person = {
-  name: 'Russell',
-  age: 21,
-  hobbies: ['Swimming', 'Learning'],
-  role: Role.ADMIN,
+const combine = (
+  a: number | string,
+  b: number | string,
+  resultConversion: 'as-number' | 'as-text'
+) => {
+  if (
+    (typeof a === 'number' && typeof b === 'number') ||
+    resultConversion === 'as-number'
+  ) {
+    return +a + +b;
+  }
+  return a.toString() + b.toString();
 };
-
-person.role === Role.ADMIN ? console.log(person.role) : '';
+const combinedAges = combine(30, 26, 'as-number'); // 56
+const combinedStr = combine('Hello', 'Russell', 'as-text'); // Hello Russell
